@@ -1,0 +1,633 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="vps,vultr" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="总想看看山的那面有什么，其实山的那面依旧还是山。SS越来越不好用了，看到google+上有社友留了一个vps搭建的教程，照猫画虎，买了一个，https://www.vultr.com/是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux和windows，还可以上传自己的ISO。">
+<meta name="keywords" content="vps,vultr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VPS到手留个记号">
+<meta property="og:url" content="http://yoursite.com/2017/10/16/vps/index.html">
+<meta property="og:site_name" content="Paolu&#39;s Notes">
+<meta property="og:description" content="总想看看山的那面有什么，其实山的那面依旧还是山。SS越来越不好用了，看到google+上有社友留了一个vps搭建的教程，照猫画虎，买了一个，https://www.vultr.com/是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux和windows，还可以上传自己的ISO。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oevwp0qtl.bkt.clouddn.com/freedom.jpg">
+<meta property="og:image" content="http://oevwp0qtl.bkt.clouddn.com/xshell%E4%BF%A1%E6%81%AF.png">
+<meta property="og:image" content="http://oevwp0qtl.bkt.clouddn.com/xshell%E7%99%BB%E5%BD%95.png">
+<meta property="og:image" content="http://oevwp0qtl.bkt.clouddn.com/vpsamh.jpg">
+<meta property="og:image" content="http://oevwp0qtl.bkt.clouddn.com/vpsrm-rf.png">
+<meta property="og:updated_time" content="2017-10-19T10:50:28.739Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VPS到手留个记号">
+<meta name="twitter:description" content="总想看看山的那面有什么，其实山的那面依旧还是山。SS越来越不好用了，看到google+上有社友留了一个vps搭建的教程，照猫画虎，买了一个，https://www.vultr.com/是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux和windows，还可以上传自己的ISO。">
+<meta name="twitter:image" content="http://oevwp0qtl.bkt.clouddn.com/freedom.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/16/vps/"/>
+
+
+  <title> VPS到手留个记号 | Paolu's Notes </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Paolu's Notes</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                VPS到手留个记号
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-10-16T12:30:52+08:00" content="2017-10-16">
+              2017-10-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/资源收集/" itemprop="url" rel="index">
+                    <span itemprop="name">资源收集</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>总想看看山的那面有什么，其实山的那面依旧还是山。</strong><br>SS越来越不好用了，看到google+上有社友留了一个vps搭建的教程，照猫画虎，买了一个，<a href="https://www.vultr.com/" target="_blank" rel="noopener">https://www.vultr.com/</a>是一家有名的云服务提供商，在全球共有15个自营数据中心机房，Vultr VPS全部采用KVM架构SSD固态硬盘，不超售，保证性能，支持linux和windows，还可以上传自己的ISO。<br><a id="more"></a></p>
+<h1 id="购买vps注册"><a href="#购买vps注册" class="headerlink" title="购买vps注册"></a>购买vps注册</h1><p>登陆官网<a href="https://www.vultr.com/" target="_blank" rel="noopener">https://www.vultr.com/</a>注册好，填写信息。选择了一个Debian 7 x64的vps，512M内存，20Gssd，机房位于New Jersey，价格是2.5$,这是最便宜的一款，比较好的是vultr支持支付宝，试了一下很快很好用瞬间收钱。充值10$，每月扣2.5$，这个价钱想一想其实也不算便宜。<br><img src="http://oevwp0qtl.bkt.clouddn.com/freedom.jpg" alt=""></p>
+<h1 id="安装SS服务端"><a href="#安装SS服务端" class="headerlink" title="安装SS服务端"></a>安装SS服务端</h1><p>首先要ssh连接VPS，看大神们都推荐用xshell 5，没啥说的转存到百度云链接：</p>
+<blockquote>
+<p><a href="http://pan.baidu.com/s/1cxwzTG" target="_blank" rel="noopener">http://pan.baidu.com/s/1cxwzTG</a> 密码：lwhc</p>
+</blockquote>
+<p>下载安装 ssh 软件，填写IP地址<br><img src="http://oevwp0qtl.bkt.clouddn.com/xshell%E4%BF%A1%E6%81%AF.png" alt=""><br>安装完成后新建会话（Alt+N）。依次填写图中信息。名称可以是Vultr或者其他，协议选择SSH，主机填写之前的IP Address，端口号选择22。<br><img src="http://oevwp0qtl.bkt.clouddn.com/xshell%E7%99%BB%E5%BD%95.png" alt=""><br>点击左侧的用户身份验证，填写信息。方法选择Password，用户名为之前的Username（一般都是root），密码为之前的Password（这个建议直接复制粘贴过来，系统给的有点复杂）登陆成功以后运行命令；<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks.log</span><br></pre></td></tr></table></figure></p>
+<p>接下来就是设定ss连接密码、端口、加密方式，最后就大功告成。<br><strong>ss卸载方法：</strong></p>
+<blockquote>
+<p>使用root用户登录，运行以下命令：<br>./shadowsocks.sh uninstall</p>
+</blockquote>
+<blockquote>
+<p>使用命令：<br>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>状态：/etc/init.d/shadowsocks status</p>
+</blockquote>
+<p><strong>单用户配置文件 Sample：</strong></p>
+<blockquote>
+<p>配置文件路径：/etc/shadowsocks.json</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="string">"server_port"</span>:<span class="number">8989</span>,</span><br><span class="line">    <span class="string">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="string">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="string">"password"</span>:<span class="string">"yourpassword"</span>,</span><br><span class="line">    <span class="string">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">    <span class="string">"fast_open"</span>: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>多用户多端口配置文件 Sample：</strong></p>
+<blockquote>
+<p>配置文件路径：/etc/shadowsocks.json</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="string">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="string">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="string">"port_password"</span>:&#123;</span><br><span class="line">         <span class="string">"8989"</span>:<span class="string">"password0"</span>,</span><br><span class="line">         <span class="string">"9001"</span>:<span class="string">"password1"</span>,</span><br><span class="line">         <span class="string">"9002"</span>:<span class="string">"password2"</span>,</span><br><span class="line">         <span class="string">"9003"</span>:<span class="string">"password3"</span>,</span><br><span class="line">         <span class="string">"9004"</span>:<span class="string">"password4"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">    <span class="string">"fast_open"</span>: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="安装Amh面板"><a href="#安装Amh面板" class="headerlink" title="安装Amh面板"></a>安装Amh面板</h1><p>安装了ss服务端以后，内存大约只使用了4分之一，别浪费，搞个虚拟主机什么的玩一玩。继续照猫画虎！安装amh面板，不太了解这个东西，其实就是代替命令行模式的web套件，对于我这样的新手来说非常需要，直达官网，按照用户手册执行安装。</p>
+<blockquote>
+<p>AMH 4.2 为独立的一套LNMP/Nginx虚拟主机面板，安装请使用纯净系统。<br>编译安装方式 (安装时间15至25分钟)<br>1) 使用 root 账号登录 Linux 服务器。<br>2) 执行 amh 安装脚本。<br>wget <a href="http://amh.sh/file/AMH/4.2/amh.sh" target="_blank" rel="noopener">http://amh.sh/file/AMH/4.2/amh.sh</a> &amp;&amp; chmod 775 amh.sh &amp;&amp; ./amh.sh 2&gt;&amp;1 | tee amh.log<br>3) 根据提示输入选择1~3选项。1为安装amh，2为卸载amh，3为退出不做操作。<br>输入1回车，接着输入MySQL与AMH密码即进入安装流程，安装过程大约需10至20分钟(以服务器性能为准)，最后如看到安装成功提示，说明系统已安装完成。<br>成功安装后有必要请删除日志文件:amh.log，如安装失败需协助安装请把错误日志反馈我们。<br>访问<a href="http://ip:8888" target="_blank" rel="noopener">http://ip:8888</a> 即可进入AMH web端管理，默认账号为admin。<br>安装小提示<br>1、安装amh成功后无法访问面板情况，请您检查主机商是否有安全组/防火墙相关限制，请开放端口，如开放面板8888端口。<br>2、安装amh过程中如果服务器解析不了amh.sh域名的情况，<br>请先更换服务器的DNS再安装AMH。执行以下命令完成更换DNS解析：<br>echo -e “options timeout:1 attempts:1 rotate\nnameserver 8.8.8.8\nnameserver 114.114.114.114” &gt;/etc/resolv.conf;</p>
+</blockquote>
+<h1 id="删除主机目录"><a href="#删除主机目录" class="headerlink" title="删除主机目录"></a>删除主机目录</h1><p>整个面板的界面简单功能挺全。<br><img src="http://oevwp0qtl.bkt.clouddn.com/vpsamh.jpg" alt=""><br>不太熟悉命令行，基本的操作都不行，看教程学一学，留个记号别忘记。<br>删除Amh面板建立的虚拟空间文件夹需要先停止mysql，然后用命令删除掉，再开启mysql。<br><img src="http://oevwp0qtl.bkt.clouddn.com/vpsrm-rf.png" alt=""></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/服务器/" rel="tag">#服务器</a>
+          
+            <a href="/tags/vps/" rel="tag">#vps</a>
+          
+            <a href="/tags/Vultr/" rel="tag">#Vultr</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/28/birthday/" rel="next" title="生日快乐">
+                <i class="fa fa-chevron-left"></i> 生日快乐
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/18/migration/" rel="prev" title="家要搬到哪里">
+                家要搬到哪里 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oevwp0qtl.bkt.clouddn.com/avatar.jpg"
+               alt="Pao Lu" />
+          <p class="site-author-name" itemprop="name">Pao Lu</p>
+          <p class="site-description motion-element" itemprop="description">华年逝水，逐浪萍踪。若流光影，太无定，太匆匆。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#购买vps注册"><span class="nav-number">1.</span> <span class="nav-text">购买vps注册</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装SS服务端"><span class="nav-number">2.</span> <span class="nav-text">安装SS服务端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Amh面板"><span class="nav-number">3.</span> <span class="nav-text">安装Amh面板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除主机目录"><span class="nav-number">4.</span> <span class="nav-text">删除主机目录</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pao Lu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

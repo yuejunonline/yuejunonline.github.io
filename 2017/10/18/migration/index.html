@@ -1,0 +1,606 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="虚拟空间,个人博客,vps" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="几天来折腾家里的Nas发现80号端口被禁用了，Nas中Win2012的IIS站点非要加上端口才能访问，真是有点郁闷了。Wordpress编辑文章的速度实在是太慢了，可能是我IIS和php搭建环境有问题，后台打开一个文章来编辑需要几十秒，许文章中的图片和附件链接都失效了，需要修复。还是看看搬走吧。可以搬到哪里去呢？">
+<meta name="keywords" content="虚拟空间,个人博客,vps">
+<meta property="og:type" content="article">
+<meta property="og:title" content="家要搬到哪里">
+<meta property="og:url" content="http://yoursite.com/2017/10/18/migration/index.html">
+<meta property="og:site_name" content="Paolu&#39;s Notes">
+<meta property="og:description" content="几天来折腾家里的Nas发现80号端口被禁用了，Nas中Win2012的IIS站点非要加上端口才能访问，真是有点郁闷了。Wordpress编辑文章的速度实在是太慢了，可能是我IIS和php搭建环境有问题，后台打开一个文章来编辑需要几十秒，许文章中的图片和附件链接都失效了，需要修复。还是看看搬走吧。可以搬到哪里去呢？">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oevwp0qtl.bkt.clouddn.com/%E6%96%B0%E6%B5%AA%E4%BA%91.png">
+<meta property="og:image" content="http://oevwp0qtl.bkt.clouddn.com/%E5%B0%8F%E9%A9%AC.jpg">
+<meta property="og:image" content="http://oevwp0qtl.bkt.clouddn.com/%E7%AE%80%E4%B9%A6.png">
+<meta property="og:image" content="http://oevwp0qtl.bkt.clouddn.com/vultr.jpg">
+<meta property="og:image" content="http://oevwp0qtl.bkt.clouddn.com/hexo.jpg">
+<meta property="og:updated_time" content="2017-10-19T05:03:05.652Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="家要搬到哪里">
+<meta name="twitter:description" content="几天来折腾家里的Nas发现80号端口被禁用了，Nas中Win2012的IIS站点非要加上端口才能访问，真是有点郁闷了。Wordpress编辑文章的速度实在是太慢了，可能是我IIS和php搭建环境有问题，后台打开一个文章来编辑需要几十秒，许文章中的图片和附件链接都失效了，需要修复。还是看看搬走吧。可以搬到哪里去呢？">
+<meta name="twitter:image" content="http://oevwp0qtl.bkt.clouddn.com/%E6%96%B0%E6%B5%AA%E4%BA%91.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/18/migration/"/>
+
+
+  <title> 家要搬到哪里 | Paolu's Notes </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Paolu's Notes</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                家要搬到哪里
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-10-18T12:30:52+08:00" content="2017-10-18">
+              2017-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/资源收集/" itemprop="url" rel="index">
+                    <span itemprop="name">资源收集</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>几天来折腾家里的Nas发现80号端口被禁用了，Nas中Win2012的IIS站点非要加上端口才能访问，真是有点郁闷了。Wordpress编辑文章的速度实在是太慢了，可能是我IIS和php搭建环境有问题，后台打开一个文章来编辑需要几十秒，许文章中的图片和附件链接都失效了，需要修复。还是看看搬走吧。可以搬到哪里去呢？<a id="more"></a>其实这个打算早都有了，Wordpress上的文章虽然不多，但是需要一篇一篇搬走，也还真是不太容易，一直下不了决心，可是访问速度不行搞得人都不愿意登陆发帖写作什么的，打开一个页面要很久，修改个帖子要很久，2017年一整年基本没有上去看过。算了，还是狠下心趁最近有空，搬家，搬家吧！<br><strong><em> 考虑过好几个方案：</em></strong></p>
+<h2 id="新浪SAE平台空间"><a href="#新浪SAE平台空间" class="headerlink" title="新浪SAE平台空间"></a>新浪SAE平台空间</h2><p><img src="http://oevwp0qtl.bkt.clouddn.com/%E6%96%B0%E6%B5%AA%E4%BA%91.png" alt=""><br><a href="http://www.sinacloud.com/sae.html" target="_blank" rel="noopener">新浪云应用（Sina App Engine简称SAE）</a>是国内最具影响力的分布式Web应用/业务开发托管、运行平台。SAE是真正意义上具有高可靠、高扩展、免运维的云计算服务。当时处于免费阶段，记得进去装了个低版本的Wrodpress，测试了几天就闲置了，没想到一直在扣云豆，到去年把初始用的1000多云豆都扣完了，成了欠费状态。现在需要充值才能继续使用。国内购买空间和数据库搭建Wordpress成本很高，加上域名的费用，至少160-200元/年，还需要备案。对于我目前的应用来说，没必要花这个钱。</p>
+<h2 id="Q友的海外虚拟空间"><a href="#Q友的海外虚拟空间" class="headerlink" title="Q友的海外虚拟空间"></a>Q友的海外虚拟空间</h2><p><img src="http://oevwp0qtl.bkt.clouddn.com/%E5%B0%8F%E9%A9%AC.jpg" alt=""><br>小马的破解做的很不错的，前几年一直买的Q友小马的海外虚拟空间，每年60元，500M空间、支持Mysql，很经济。去年底一直联系不上这个小马了，加上<a href="friend8.net">域名</a>也计划不再续费使用了。个人的海外空间或者主机还是觉得不可靠，钱虽不多，数据无价。还是算了吧。这个方案就不再考虑了。印象中几年前小马还是高中生的时候就买了他的空间，后来得知去了厦大继续读书了。现在不知道什么情况了，这是个挺厉害的IT精英！</p>
+<h2 id="申请简书账号搬家"><a href="#申请简书账号搬家" class="headerlink" title="申请简书账号搬家"></a>申请简书账号搬家</h2><p><a href="http://www.jianshu.com/" target="_blank" rel="noopener">简书</a>是个挺牛的社区，创作社区，任何人均可以在其上进行创作。用户在简书上面可以方便的创作自己的作品，互相交流。简书成为国内优质原创内容输出平台。免费注册账号，写作空间不限制，Warkdown语法编辑，web页面和app都可以写作，很方便也很好用，界面简洁明了，很不错的选择！<br><img src="http://oevwp0qtl.bkt.clouddn.com/%E7%AE%80%E4%B9%A6.png" alt=""><br>对我来说，太高大上了。都是大咖写手搞得原创剧本什么的。我写这几个日记就不要在上面露脸了，还是找个僻静之地留个脚印就可以了。</p>
+<h2 id="购买国外Vps主机"><a href="#购买国外Vps主机" class="headerlink" title="购买国外Vps主机"></a>购买国外Vps主机</h2><p><img src="http://oevwp0qtl.bkt.clouddn.com/vultr.jpg" alt=""><br><a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a>国外优质主机站，有便宜的低价机，最近买了一个512的Debian7x64，用来搭了梯子，近期速度较慢，不知道以后怎么。如果用来架站的话，可以不备案，价格也便宜，就是访问速度不行，本来Wrodpress速度就慢，加上国外延迟都在300以上，用来架站看来也不可行，最主要是便宜主机都是Linux系统，我这二把刀整不明白，所以还是别瞎耽误工夫了。</p>
+<h2 id="Hexo-Github-Pages"><a href="#Hexo-Github-Pages" class="headerlink" title="Hexo + Github Pages"></a>Hexo + Github Pages</h2><p><img src="http://oevwp0qtl.bkt.clouddn.com/hexo.jpg" alt=""><br><a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a>是一款基于Node.js的静态博客框架，Github官方推荐的是Jekyll。对比了下，大多认为hexo比较简单，于是我选择了它。简单明了，同时部署到<a href="https://github.com/" target="_blank" rel="noopener">Github</a>和<a href="https://coding.net/" target="_blank" rel="noopener">Coding</a>速度尚可还不要钱，这或许是最佳的方案了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/服务器/" rel="tag">#服务器</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/16/vps/" rel="next" title="VPS到手留个记号">
+                <i class="fa fa-chevron-left"></i> VPS到手留个记号
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/04/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oevwp0qtl.bkt.clouddn.com/avatar.jpg"
+               alt="Pao Lu" />
+          <p class="site-author-name" itemprop="name">Pao Lu</p>
+          <p class="site-description motion-element" itemprop="description">华年逝水，逐浪萍踪。若流光影，太无定，太匆匆。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#新浪SAE平台空间"><span class="nav-number">1.</span> <span class="nav-text">新浪SAE平台空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q友的海外虚拟空间"><span class="nav-number">2.</span> <span class="nav-text">Q友的海外虚拟空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申请简书账号搬家"><span class="nav-number">3.</span> <span class="nav-text">申请简书账号搬家</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#购买国外Vps主机"><span class="nav-number">4.</span> <span class="nav-text">购买国外Vps主机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-Github-Pages"><span class="nav-number">5.</span> <span class="nav-text">Hexo + Github Pages</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pao Lu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
