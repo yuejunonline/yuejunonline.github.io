@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Paolu&#39;s Notes">
 <meta property="og:description" content="1很多朋友在用github管理项目的时候，都是直接使用https url克隆到本地，当然也有有些人使用 SSH url 克隆到本地。然而，为什么绝大多数人会使用https url克隆呢？这是因为，使用https url克隆对初学者来说会比较方便，复制https url 然后到 git Bash 里面直接用clone命令克隆到本地就好了。而使用 SSH url 克隆却需要在克隆之前先配置和添加好 S">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-11T14:12:54.248Z">
+<meta property="og:updated_time" content="2019-04-11T14:18:42.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github设置添加SSH">
 <meta name="twitter:description" content="1很多朋友在用github管理项目的时候，都是直接使用https url克隆到本地，当然也有有些人使用 SSH url 克隆到本地。然而，为什么绝大多数人会使用https url克隆呢？这是因为，使用https url克隆对初学者来说会比较方便，复制https url 然后到 git Bash 里面直接用clone命令克隆到本地就好了。而使用 SSH url 克隆却需要在克隆之前先配置和添加好 S">
@@ -342,7 +342,9 @@
 <pre><code>    Generating public/private rsa key pair.
 
 `# Enter file in which to save the key (/c/Users/you/.ssh/id_rsa): [Press enter] ` 
-</code></pre><p>当然，你也可以不输入文件名，使用默认文件名（推荐），那么就会生成 id_rsa 和 id_rsa.pub 两个秘钥文件。</p>
+</code></pre><ol>
+<li>当然，你也可以不输入文件名，使用默认文件名（推荐），那么就会生成 id_rsa 和 id_rsa.pub 两个秘钥文件。</li>
+</ol>
 <p>接着又会提示你输入两次密码（该密码是你push文件的时候要输入的密码，而不是github管理者的密码），</p>
 <p>当然，你也可以不输入密码，直接按回车。那么push的时候就不需要输入密码，直接提交到github上了，如：</p>
 <pre><code>Enter passphrase (empty for no passphrase): 
@@ -361,9 +363,9 @@
 <p><code>$ clip &lt; ~/.ssh/id_rsa.pub</code></p>
 </li>
 </ol>
-<p>b、登录你的github账号，从又上角的设置（ Account Settings ）进入，然后点击菜单栏的 SSH key 进入页面添加 SSH key。</p>
-<p>c、点击 Add SSH key 按钮添加一个 SSH key 。把你复制的 SSH key 代码粘贴到 key 所对应的输入框中，记得 SSH key 代码的前后不要留有空格或者回车。当然，上面的 Title 所对应的输入框你也可以输入一个该 SSH key 显示在 github 上的一个别名。默认的会使用你的邮件名称。</p>
-<p>4、测试一下该SSH key<br>在git Bash 中输入以下代码</p>
+<p>6、登录你的github账号，从又上角的设置（ Account Settings ）进入，然后点击菜单栏的 SSH key 进入页面添加 SSH key。</p>
+<p>7、点击 Add SSH key 按钮添加一个 SSH key 。把你复制的 SSH key 代码粘贴到 key 所对应的输入框中，记得 SSH key 代码的前后不要留有空格或者回车。当然，上面的 Title 所对应的输入框你也可以输入一个该 SSH key 显示在 github 上的一个别名。默认的会使用你的邮件名称。</p>
+<p>8、测试一下该SSH key<br>在git Bash 中输入以下代码</p>
 <pre><code>$ ssh -T git@github.com
 </code></pre><p>当你输入以上代码时，会有一段警告代码，如：</p>
 <pre><code>The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.
