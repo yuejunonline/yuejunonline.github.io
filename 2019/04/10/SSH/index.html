@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Paolu&#39;s Notes">
 <meta property="og:description" content="很多朋友在用github管理项目的时候，都是直接使用https url克隆到本地，当然也有有些人使用 SSH url 克隆到本地。然而，为什么绝大多数人会使用https url克隆呢？这是因为，使用https url克隆对初学者来说会比较方便，复制https url 然后到 git Bash 里面直接用clone命令克隆到本地就好了。而使用 SSH url 克隆却需要在克隆之前先配置和添加好 SS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-11T14:44:02.457Z">
+<meta property="og:updated_time" content="2019-04-11T14:45:28.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github设置添加SSH">
 <meta name="twitter:description" content="很多朋友在用github管理项目的时候，都是直接使用https url克隆到本地，当然也有有些人使用 SSH url 克隆到本地。然而，为什么绝大多数人会使用https url克隆呢？这是因为，使用https url克隆对初学者来说会比较方便，复制https url 然后到 git Bash 里面直接用clone命令克隆到本地就好了。而使用 SSH url 克隆却需要在克隆之前先配置和添加好 SS">
@@ -320,6 +320,7 @@
       
         <p><strong>很多朋友在用github管理项目的时候，都是直接使用https url克隆到本地，当然也有有些人使用 SSH url 克隆到本地。然而，为什么绝大多数人会使用https url克隆呢？这是因为，使用https url克隆对初学者来说会比较方便，复制https url 然后到 git Bash 里面直接用clone命令克隆到本地就好了。而使用 SSH url 克隆却需要在克隆之前先配置和添加好 SSH key 。<br>因此，如果你想要使用 SSH url 克隆的话，你必须是这个项目的拥有者。否则你是无法添加 SSH key 的。</strong> </p>
 <p>生成多个公钥请点击：<a href="http://www.cnblogs.com/ayseeing/p/4445194.html" target="_blank" rel="noopener">http://www.cnblogs.com/ayseeing/p/4445194.html</a> </p>
+<hr>
 <h2 id="https-和-SSH-的区别："><a href="#https-和-SSH-的区别：" class="headerlink" title="https 和 SSH 的区别："></a>https 和 SSH 的区别：</h2><ol>
 <li>前者可以随意克隆github上的项目，而不管是谁的；而后者则是你必须是你要克隆的项目的拥有者或管理员，且需要先添加 SSH key ，否则无法克隆。</li>
 <li>https url 在push的时候是需要验证用户名和密码的；而 SSH 在push的时候，是不需要输入用户名的，如果配置SSH key的时候设置了密码，则需要输入密码的，否则直接是不需要输入密码的。</li>
@@ -343,10 +344,10 @@
 <li><p>测试一下该SSH key在git Bash 中输入以下代码<code>$ ssh -T git@github.com</code><br>当你输入以上代码时，会有一段警告代码，如：</p>
 <p> <code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.</code></p>
 <p>  <code># RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</code></p>
+<p>  <code># Are you sure you want to continue connecting (yes/no)?</code></p>
 </li>
 </ol>
-<pre><code>`# Are you sure you want to continue connecting (yes/no)?`
-</code></pre><p>这是正常的，你输入 yes 回车既可。如果你创建 SSH key 的时候设置了密码，接下来就会提示你输入密码，如：<code>Enter passphrase for key &#39;/c/Users/Administrator/.ssh/id_rsa&#39;:</code><br>当然如果你密码输错了，会再要求你输入，知道对了为止。注意：输入密码时如果输错一个字就会不正确，使用删除键是无法更正的。密码正确后你会看到下面这段话，如：</p>
+<p>这是正常的，你输入 yes 回车既可。如果你创建 SSH key 的时候设置了密码，接下来就会提示你输入密码，如：<code>Enter passphrase for key &#39;/c/Users/Administrator/.ssh/id_rsa&#39;:</code><br>当然如果你密码输错了，会再要求你输入，知道对了为止。注意：输入密码时如果输错一个字就会不正确，使用删除键是无法更正的。密码正确后你会看到下面这段话，如：</p>
 <p><code>Hi username! You&#39;ve successfully authenticated, but GitHub does not</code></p>
 <p><code># provide shell access.</code></p>
 <p>如果用户名是正确的,你已经成功设置SSH密钥。如果你看到 “access denied” ，者表示拒绝访问，那么你就需要使用 https 去访问，而不是 SSH 。</p>
